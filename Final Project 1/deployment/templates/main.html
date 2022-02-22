@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi harga taxi online</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+
+    <div class="form">
+        <h1>Prediksi harga taxi online</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            
+            <input type="text" name="distance" placeholder="Masukan jarak tempuh" required="required" />
+          
+            <label for="surge_multiplier">Pilih jenis lonjakan harga:</label>
+            <select name="surge_multiplier" id="surge_multiplier">
+                <option value="1">Paling rendah</option>
+                <option value="1.25">Rendah</option>
+                <option value="1.5">Agak rendah</option>
+                <option value="1.75">Sedang</option> 
+                <option value=" 2">Agak tinggi</option>
+                <option value="2.5">Tinggi</option>                               
+                <option value="3">Paling tinggi</option>                
+            </select>
+
+            <label for="name_Black">Pilih jenis taxi:</label>
+            <select name="name_Black" id="name_Black    ">
+                <optgroup label="Uber">
+                    <option value="100000000000" >Black</option>
+                    <option value="010000000000">Black SUV</option>
+                    <option value="000000001000">UberPool</option>
+                    <option value="000000000100">UberX</option>
+                    <option value="000000000010">UberXL</option>
+                    <option value="000000000001">WAV</option>
+                </optgroup>
+                <optgroup label="Lyft">
+                    <option value="001000000000">Lux</option>
+                    <option value="000100000000">Lux Black</option>
+                    <option value="000010000000">Lux Black XL</option>                                
+                    <option value="000001000000">Lyft</option>                
+                    <option value="000000100000">Lyft XL</option>
+                    <option value="000000010000">Shared</option>
+                </optgroup>          
+          
+            </select>
+            
+            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+        </form>
+
+
+        <p class="message">{{ prediction_text }}</p>
+    </div>
+
+</body>
+</html>

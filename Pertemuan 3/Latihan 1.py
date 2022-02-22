@@ -1,0 +1,8 @@
+panjang = input("Masukan variable panjang: ")
+lebar = input("Masukan variable lebar: ")
+keliling_segiempat = 2*int(panjang) + 2*int(lebar)
+luas_segiempat = int(panjang) * int(lebar)
+print("Panjang segi empat - ", panjang)
+print("Lebar segi empat - ", lebar)
+print("Keliling segi empat - ", keliling_segiempat)
+print("Luas segi empat - ", luas_segiempat)
